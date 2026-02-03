@@ -7,6 +7,14 @@ public sealed class GameStateMachine
     public GameStateMachine(GameSession session)
     {
         _session = session;
+
+        EventBus.Subscribe<PreviewFinished>(_ =>
+        {
+            if(CurrentState == GameState.Preview)
+            {
+                Transition(GameState.Playing);
+            }
+        });
     }
 
     public void EnterInitialState()
