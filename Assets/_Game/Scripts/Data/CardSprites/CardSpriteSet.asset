@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea00abc9a003bb48a6ba731eb5e0940, type: 3}
+  m_Name: CardSpriteSet
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 573724259, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -958262897, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -766783908, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 2019277573, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -159055077, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -1811327875, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -2025911888, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -1747851761, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 365892559, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 940121169, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 2013617233, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 324758730, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -2108017759, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 1541118905, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -1533967888, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -551092126, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -1415128048, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -1894143756, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: -2020272000, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 1855394668, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 341372832, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 596518402, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
+  - {fileID: 1629099044, guid: d314cb0e1ccfb5f41882910d94d3da23, type: 3}
