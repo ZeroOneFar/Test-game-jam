@@ -15,6 +15,13 @@ public sealed class GameStateMachine
                 Transition(GameState.Playing);
             }
         });
+
+        EventBus.Subscribe<GameOverTriggered>(_ =>
+        {
+            if (CurrentState == GameState.Playing)
+                Transition(GameState.GameOver);
+        });
+
     }
 
     public void EnterInitialState()
