@@ -21,7 +21,6 @@ public sealed class GameStateMachine
             if (CurrentState == GameState.Playing)
                 Transition(GameState.GameOver);
         });
-
     }
 
     public void EnterInitialState()
