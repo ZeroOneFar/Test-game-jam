@@ -24,10 +24,12 @@ public sealed class MatchResolver
             evt.B.MarkMatched();
 
             EventBus.Raise(new CardsMatched(evt.A, evt.B));
+            EventBus.Raise(new PlayMatchSfx());
         }
         else
         {
             EventBus.Raise(new CardsMismatched());
+            EventBus.Raise(new PlayMismatchSfx());
         }
     }
 }
