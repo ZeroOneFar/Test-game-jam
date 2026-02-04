@@ -17,7 +17,7 @@ public static class GameStateRules
     {
         var elapsed = TimeProvider.UtcNow() - session.LastPausedUtc;
 
-        if (elapsed.TotalMinutes <= 2)
+        if (elapsed.TotalMinutes >= 2)
             return GameState.Preview;
 
         return GameState.Playing;

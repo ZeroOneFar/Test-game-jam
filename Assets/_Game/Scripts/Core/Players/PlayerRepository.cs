@@ -13,14 +13,6 @@ public sealed class PlayerRepository
 
     public IReadOnlyList<PlayerProfile> All => _players;
 
-    public PlayerProfile Add(string name)
-    {
-        var player = new PlayerProfile(name);
-        _players.Add(player);
-        Save();
-        return player;
-    }
-
     private void Load()
     {
         if (!PlayerPrefs.HasKey(Key))
@@ -36,5 +28,16 @@ public sealed class PlayerRepository
         var joined = string.Join("|", _players.ConvertAll(p => p.Name));
         PlayerPrefs.SetString(Key, joined);
         PlayerPrefs.Save();
+    }
+
+    public PlayerProfile Add(string name)
+    {
+        if (_players.Exists(p => p.Name == name))
+            return null;
+
+        var player = new PlayerProfile(name);
+        _players.Add(player);
+        Save();
+        return player;
     }
 }

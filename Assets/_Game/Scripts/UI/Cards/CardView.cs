@@ -3,17 +3,52 @@ using UnityEngine.EventSystems;
 
 public sealed class CardView : MonoBehaviour, IPointerClickHandler
 {
-    public CardModel Model;
+    public CardModel Model { get; private set; }
 
     [SerializeField] private SpriteRenderer front;
+    [SerializeField] private SpriteRenderer back;
 
-    public void SetSprite(Sprite sprite)
+    private bool _isFaceUp;
+    private bool _initialized;
+
+    public void Init(CardModel model, Sprite frontSprite)
     {
-        front.sprite = sprite;
+        Model = model;
+        front.sprite = frontSprite;
+
+        SetFaceDown();
+        _initialized = true;
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("clicked on card");
+        if (!_initialized || _isFaceUp)
+            return;
+
         EventBus.Raise(new PlayFlipSfx());
         EventBus.Raise(new CardSelected(Model));
     }
+
+    // ===== VISUAL STATE =====
+
+    public void SetFaceUp()
+    {
+        _isFaceUp = true;
+        front.enabled = true;
+        back.enabled = false;
+    }
+
+    public void SetFaceDown()
+    {
+        _isFaceUp = false;
+        front.enabled = false;
+        back.enabled = true;
+    }
+
+    public void Remove()
+    {
+        gameObject.SetActive(false);
+    }
 }
+

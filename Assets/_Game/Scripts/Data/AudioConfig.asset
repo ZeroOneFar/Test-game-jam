@@ -16,7 +16,7 @@ MonoBehaviour:
   match: {fileID: 8300000, guid: cf6bdc0d81a93cc4d9096d42d4e06a75, type: 3}
   mismatch: {fileID: 8300000, guid: bed1fc14a2526c048ad39e08b43ccf02, type: 3}
   gameOver: {fileID: 8300000, guid: 50d36895e080bb643bccd1609a7b0e24, type: 3}
-  flipVolume: 0.632
-  matchVolume: 0.9
-  mismatchVolume: 0.9
-  gameOverVolume: 1
+  flipVolume: 0.447
+  matchVolume: 0.472
+  mismatchVolume: 0.472
+  gameOverVolume: 0.468

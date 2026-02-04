@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class EventBus
 {
@@ -15,7 +16,8 @@ public static class EventBus
 
     public static void Raise<T>(T evt)
     {
-        if (_handlers.TryGetValue(typeof(T), out var handler))
-            handler(evt);
+        if (_handlers.TryGetValue(typeof(T), out var handler)){
+            Debug.Log("event rised: "+ evt);
+            handler(evt);}
     }
 }
