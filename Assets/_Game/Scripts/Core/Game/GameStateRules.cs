@@ -7,6 +7,7 @@ public static class GameStateRules
             (GameState.Home, GameState.PlayerSelect) => true,
             (GameState.PlayerSelect, GameState.Preview) => true,
             (GameState.Preview, GameState.Playing) => true,
+            (GameState.ResumeReveal, GameState.Playing) => true,
             (GameState.Playing, GameState.GameOver) => true,
             (GameState.GameOver, GameState.Home) => true,
             _ => false
@@ -17,10 +18,10 @@ public static class GameStateRules
     {
         var elapsed = TimeProvider.UtcNow() - session.LastPausedUtc;
 
-        if (elapsed.TotalMinutes >= 2)
-            return GameState.Preview;
+        if (elapsed.TotalMinutes <= 2)
+            return GameState.Playing;
 
-        return GameState.Playing;
+        return GameState.ResumeReveal;
     }
 }
 public readonly struct GameStateChanged

@@ -4,7 +4,7 @@ public enum GameState
     Home,
     PlayerSelect,
     Preview,
-    ResumePreview,
+    ResumeReveal,
     Playing,
     GameOver
 }

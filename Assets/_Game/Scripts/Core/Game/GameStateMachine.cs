@@ -42,6 +42,13 @@ public sealed class GameStateMachine
                 Transition(GameState.Home);
         });
 
+        EventBus.Subscribe<ResumeRevealFinished>(_ =>
+        {
+            if (CurrentState == GameState.ResumeReveal)
+                Transition(GameState.Playing);
+        });
+   
+
     }
 
     public void EnterInitialState()

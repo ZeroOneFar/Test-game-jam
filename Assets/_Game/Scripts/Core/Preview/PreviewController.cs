@@ -20,17 +20,11 @@ public sealed class PreviewController : MonoBehaviour
 
     private void OnGameStateChanged(GameStateChanged evt)
     {
-        switch (evt.State)
-        {
-            case GameState.Preview:
-                StartPreview();
-                break;
+        if(evt.State == GameState.Preview)
+            StartPreview();
 
-            case GameState.Playing:
-                if (IsResumeRevealRequired())
-                    StartResumeReveal();
-                break;
-        }
+        else if(evt.State == GameState.ResumeReveal)
+            StartResumeReveal();
     }
 
     private void Update()
@@ -70,11 +64,5 @@ public sealed class PreviewController : MonoBehaviour
         _running = true;
 
         EventBus.Raise(new ResumeRevealStarted());
-    }
-
-    private bool IsResumeRevealRequired()
-    {
-        // Resume > 2 minutes already resolved to Playing by state machine
-        return true;
     }
 }
