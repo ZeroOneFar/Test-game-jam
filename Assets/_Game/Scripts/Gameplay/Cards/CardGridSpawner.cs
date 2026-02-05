@@ -71,11 +71,9 @@ public sealed class CardGridSpawner : MonoBehaviour
 
                 var model = new CardModel(deck[index++]);
                 var view = go.GetComponent<CardView>();
-
-                model.BindView(view);
                 view.Init(model, spriteSet.sprites[model.Id.Value]);
 
-                // 🔴 THIS IS THE KEY LINE
+                // THIS IS THE KEY LINE
                 _visibility.Register(view);
             }
         }

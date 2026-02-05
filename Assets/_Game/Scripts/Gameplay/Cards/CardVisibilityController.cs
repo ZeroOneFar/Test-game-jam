@@ -19,8 +19,8 @@ public sealed class CardVisibilityController : MonoBehaviour
 
     private void OnCardMismatched(CardsMismatched e)
     {
-        e.A.View.SetFaceDown();
-        e.B.View.SetFaceDown();
+        e.A.SetFaceDown();
+        e.B.SetFaceDown();
     }
 
     public void Register(CardView view)
@@ -57,9 +57,9 @@ public sealed class CardVisibilityController : MonoBehaviour
     {
         // matched cards should not be flipped again
 
-        e.A.View.Remove();
-        e.B.View.Remove();
-        _cards.Remove(e.A.View);
-        _cards.Remove(e.B.View);
+        e.A.Remove();
+        e.B.Remove();
+        _cards.Remove(e.A);
+        _cards.Remove(e.B);
     }
 }

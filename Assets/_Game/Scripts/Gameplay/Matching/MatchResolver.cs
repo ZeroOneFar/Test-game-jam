@@ -1,35 +1,33 @@
-public readonly struct ResolvePairRequested
+public interface IMatchPairHandler
 {
-    public readonly CardModel A;
-    public readonly CardModel B;
+    public  CardModel A();
+    public  CardModel B();
 
-    public ResolvePairRequested(CardModel a, CardModel b)
-    {
-        A = a;
-        B = b;
-    }
+    void Matched();
+    void MisMached();
+
 }
 public sealed class MatchResolver
 {
     public MatchResolver()
     {
-        EventBus.Subscribe<ResolvePairRequested>(OnResolve);
+        
     }
 
-    private void OnResolve(ResolvePairRequested evt)
+    public void OnResolve(IMatchPairHandler pairObj)
     {
-        if (evt.A.Id.Value == evt.B.Id.Value)
-        {
-            evt.A.MarkMatched();
-            evt.B.MarkMatched();
 
-            EventBus.Raise(new CardsMatched(evt.A, evt.B));
-            EventBus.Raise(new PlayMatchSfx());
+        if (pairObj.A().Id.Value == pairObj.B().Id.Value)
+        {
+            pairObj.A().MarkMatched();
+            pairObj.B().MarkMatched();
+
+            pairObj.Matched();
         }
         else
         {
-            EventBus.Raise(new CardsMismatched(evt.A, evt.B));
-            EventBus.Raise(new PlayMismatchSfx());
+            pairObj.MisMached();
         }
+
     }
 }

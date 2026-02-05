@@ -28,7 +28,7 @@ public sealed class CardView : MonoBehaviour, IPointerClickHandler
         SetFaceUp();
 
         EventBus.Raise(new PlayFlipSfx());
-        EventBus.Raise(new CardSelected(Model));
+        EventBus.Raise(new CardClicked(this));
     }
 
     // ===== VISUAL STATE =====

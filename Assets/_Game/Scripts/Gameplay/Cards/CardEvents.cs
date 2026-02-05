@@ -1,15 +1,15 @@
-public readonly struct CardSelected
+public readonly struct CardClicked
 {
-    public readonly CardModel Card;
-    public CardSelected(CardModel card) => Card = card;
+    public readonly CardView Card;
+    public CardClicked(CardView card) => Card = card;
 }
 
 public readonly struct CardsMatched
 {
-    public readonly CardModel A;
-    public readonly CardModel B;
+    public readonly CardView A;
+    public readonly CardView B;
 
-    public CardsMatched(CardModel a, CardModel b)
+    public CardsMatched(CardView a, CardView b)
     {
         A = a;
         B = b;
@@ -18,10 +18,10 @@ public readonly struct CardsMatched
 
 public readonly struct CardsMismatched
 {
-        public readonly CardModel A;
-    public readonly CardModel B;
+        public readonly CardView A;
+    public readonly CardView B;
 
-    public CardsMismatched(CardModel a, CardModel b)
+    public CardsMismatched(CardView a, CardView b)
     {
         A = a;
         B = b;
