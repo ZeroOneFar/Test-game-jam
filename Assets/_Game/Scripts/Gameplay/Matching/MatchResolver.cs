@@ -28,7 +28,7 @@ public sealed class MatchResolver
         }
         else
         {
-            EventBus.Raise(new CardsMismatched());
+            EventBus.Raise(new CardsMismatched(evt.A, evt.B));
             EventBus.Raise(new PlayMismatchSfx());
         }
     }

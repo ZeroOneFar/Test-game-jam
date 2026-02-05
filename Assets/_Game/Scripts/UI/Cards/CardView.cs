@@ -15,7 +15,6 @@ public sealed class CardView : MonoBehaviour, IPointerClickHandler
     {
         Model = model;
         front.sprite = frontSprite;
-
         SetFaceDown();
         _initialized = true;
     }
@@ -26,6 +25,8 @@ public sealed class CardView : MonoBehaviour, IPointerClickHandler
         if (!_initialized || _isFaceUp)
             return;
 
+        SetFaceUp();
+
         EventBus.Raise(new PlayFlipSfx());
         EventBus.Raise(new CardSelected(Model));
     }
@@ -34,6 +35,7 @@ public sealed class CardView : MonoBehaviour, IPointerClickHandler
 
     public void SetFaceUp()
     {
+        Debug.Log("card face up" + gameObject.name);
         _isFaceUp = true;
         front.enabled = true;
         back.enabled = false;
@@ -41,6 +43,7 @@ public sealed class CardView : MonoBehaviour, IPointerClickHandler
 
     public void SetFaceDown()
     {
+        Debug.Log("card face down" + gameObject.name);
         _isFaceUp = false;
         front.enabled = false;
         back.enabled = true;

@@ -23,10 +23,10 @@ public sealed class CardGridSpawner : MonoBehaviour
     private void OnStateChanged(GameStateChanged e)
     {
         if (e.State == GameState.Preview)
-            Spawn();
+            PreviewSpawn();
     }
 
-    private void Spawn()
+    private void PreviewSpawn()
     {
         if (_grid?.SelectedGrid == null)
         {
@@ -79,6 +79,7 @@ public sealed class CardGridSpawner : MonoBehaviour
                 _visibility.Register(view);
             }
         }
+        EventBus.Raise( new CardSpawnFinishedFromPreviw());
     }
 
     private void ClearExisting()
@@ -89,3 +90,8 @@ public sealed class CardGridSpawner : MonoBehaviour
             Destroy(spawnParent.GetChild(i).gameObject);
     }
 }
+
+public readonly struct CardSpawnFinishedFromPreviw
+{
+    
+} 

@@ -16,4 +16,14 @@ public readonly struct CardsMatched
     }
 }
 
-public readonly struct CardsMismatched { }
+public readonly struct CardsMismatched
+{
+        public readonly CardModel A;
+    public readonly CardModel B;
+
+    public CardsMismatched(CardModel a, CardModel b)
+    {
+        A = a;
+        B = b;
+    }
+}
