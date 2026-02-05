@@ -83,6 +83,9 @@ public sealed class CardSelectionController : MonoBehaviour
     {
         if (_first == null)
             return;
+        
+        if (_inFlight.Contains(_first))
+            return;
 
         _first.SetFaceDown();
         _first = null;
@@ -97,28 +100,30 @@ public sealed class CardSelectionController : MonoBehaviour
 
     internal class ResolverHandler : IMatchPairHandler
     {
-        private CardView a;
-        private CardView b;
+        private readonly CardView _cardA;
+        private readonly CardView _cardB;
 
 
         internal ResolverHandler(CardView A, CardView B)
         {
-            a = A;
-            b = B;
+            _cardA = A;
+            _cardB = B;
         }
 
-        public CardModel A() => a.Model;
-        public CardModel B() => b.Model;
-
-        public void Matched()
+        public bool IsMatch() => _cardA.Model.Id.Value == _cardB.Model.Id.Value;
+        
+        public void OnMatched()
         {
-            EventBus.Raise( new CardsMatched(a,b));
+            _cardA.Model.MarkMatched();
+            _cardB.Model.MarkMatched();
+
+            EventBus.Raise( new CardsMatched(_cardA,_cardB));
             EventBus.Raise(new PlayMatchSfx());
         }
 
-        public void MisMached()
+        public void OnMismached()
         {
-            EventBus.Raise( new CardsMismatched(a,b));
+            EventBus.Raise( new CardsMismatched(_cardA,_cardB));
             EventBus.Raise(new PlayMismatchSfx());
         }
     }

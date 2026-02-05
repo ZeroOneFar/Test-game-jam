@@ -1,10 +1,9 @@
 public interface IMatchPairHandler
 {
-    public  CardModel A();
-    public  CardModel B();
+    bool IsMatch();
 
-    void Matched();
-    void MisMached();
+    void OnMatched();
+    void OnMismached();
 
 }
 public sealed class MatchResolver
@@ -17,16 +16,14 @@ public sealed class MatchResolver
     public void OnResolve(IMatchPairHandler pairObj)
     {
 
-        if (pairObj.A().Id.Value == pairObj.B().Id.Value)
+        if (pairObj.IsMatch())
         {
-            pairObj.A().MarkMatched();
-            pairObj.B().MarkMatched();
 
-            pairObj.Matched();
+            pairObj.OnMatched();
         }
         else
         {
-            pairObj.MisMached();
+            pairObj.OnMismached();
         }
 
     }
