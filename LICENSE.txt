@@ -1,0 +1,75 @@
+EVALUATION-ONLY LICENSE AGREEMENT
+
+Version 1.0
+Copyright (c) 2026 Forema . All Rights Reserved.
+
+## 1. Grant of License
+
+Subject to the terms of this Agreement, the Licensor grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to:
+
+Download the Software from the official repository
+
+Install and run the Software solely for internal evaluation, testing, and review purposes
+
+This license does not grant any ownership rights.
+
+## 2. Restrictions
+
+You may NOT:
+
+Use the Software for commercial purposes
+
+Distribute, sublicense, sell, lease, or transfer the Software
+
+Include the Software in any product or service
+
+Remove copyright or proprietary notices
+
+Reverse engineer, decompile, disassemble, or attempt to extract source code from compiled builds
+
+Publish modified versions of the Software
+
+Use the Software in production environments
+
+Any unauthorized use immediately terminates this license.
+
+## 3. Ownership
+
+The Software, including all source code, assets, architecture, game mechanics, and documentation, is and shall remain the sole property of the Licensor.
+
+No rights are granted except those explicitly stated in this Agreement.
+
+## 4. Contributions
+
+Unless otherwise agreed in writing, any feedback or suggestions you provide may be used by the Licensor without restriction or compensation.
+
+Contributors do not receive any ownership rights by default.
+
+## 5. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+
+MERCHANTABILITY
+
+FITNESS FOR A PARTICULAR PURPOSE
+
+NON-INFRINGEMENT
+
+You assume all risk arising from use of the Software.
+
+## 6. Limitation of Liability
+
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DAMAGES ARISING FROM USE OR INABILITY TO USE THE SOFTWARE.
+
+## 7. Termination
+
+This license terminates automatically if you violate any terms. Upon termination, you must delete all copies of the Software.
+
+## 8. Governing Law
+
+This Agreement shall be governed by the laws of the United Arab Emirates, without regard to conflict of law principles.
+
+## 9. Contact
+
+For commercial licensing inquiries, contact:
+support@forema.app
