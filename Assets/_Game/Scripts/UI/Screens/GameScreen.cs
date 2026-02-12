@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public sealed class GameScreen : MonoBehaviour
 {
@@ -9,19 +10,22 @@ public sealed class GameScreen : MonoBehaviour
 
     private int _mistakes;
 
-    private void OnEnable()
+    private void Start()
     {
         EventBus.Subscribe<PlayerSelected>(e =>
             playerName.text = e.Player.Name);
 
         EventBus.Subscribe<MatchScored>(e =>
-            score.text = $"Score: {e.Points}");
+            score.text = $" {e.Points}");
 
-        EventBus.Subscribe<CardsMismatched>(_ =>
-        {
-            _mistakes++;
-            chances.text = $"Mistakes: {_mistakes} / 3";
-        });
+        EventBus.Subscribe<CardsMismatched>(CalculateMistake);
+    }
+
+    private void CalculateMistake(CardsMismatched mismatched)
+    {
+        Debug.Log("update ui for card mismatched");
+        _mistakes++;
+        chances.text = $"{_mistakes} / 3";
     }
 
     private void OnDisable()

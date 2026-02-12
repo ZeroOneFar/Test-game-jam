@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public sealed class GridSelectToggle : MonoBehaviour
 {
     [SerializeField] private CardGridConfig gridConfig;
     [SerializeField] private Toggle toggle;
+    [SerializeField] private TextMeshProUGUI toggleText;
 
     private bool _initialized;
     private void Awake()
@@ -20,6 +22,8 @@ public sealed class GridSelectToggle : MonoBehaviour
             _initialized = true;
             EventBus.Raise(new GridSelected(gridConfig));
         }
+
+        toggleText.text = $"{gridConfig.rows}x{gridConfig.columns}";
     }
 
     private void OnChanged(bool isOn)
